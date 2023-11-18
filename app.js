@@ -114,7 +114,7 @@ app.use("/",userRouter);
 
 
 app.get("/",(req,res)=>{
-    res.send("hello i am home root")
+  res.redirect("/listings")
 })
 
 app.all("*",(req,res,next)=>{
