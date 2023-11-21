@@ -65,7 +65,7 @@ router.get("/:id",async (req,res)=>{
 
 
 
-router.post("/" ,upload.single("listing[image]"),validateListing,async (req,res,next)=>{
+router.post("/" ,upload.single("listing[image]"),async (req,res,next)=>{
   
     // try{
       let response =await geocodingClient.forwardGeocode({
