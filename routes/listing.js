@@ -68,10 +68,10 @@ router.get("/:id",async (req,res)=>{
 router.post("/" ,upload.single("listing[image]"),validateListing,async (req,res,next)=>{
   
     // try{
-    //   let response =await geocodingClient.forwardGeocode({
-    //     query: req.body.listing.location,
-    //     limit: 1
-    //   }).send();
+      let response =await geocodingClient.forwardGeocode({
+        query: req.body.listing.location,
+        limit: 1
+      }).send();
       
      
         
@@ -90,9 +90,9 @@ router.post("/" ,upload.single("listing[image]"),validateListing,async (req,res,
           req.flash("success", "New Listing Created!");
           return res.redirect("/listings")
   
-    }catch(err){
-      next(err);
-    }
+    // }catch(err){
+    //   next(err);
+    // }
       
   })
 
