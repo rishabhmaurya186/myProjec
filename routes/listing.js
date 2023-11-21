@@ -68,10 +68,10 @@ router.get("/:id",async (req,res)=>{
 router.post("/" ,upload.single("listing[image]"),async (req,res,next)=>{
   
     // try{
-      let response =await geocodingClient.forwardGeocode({
-        query: req.body.listing.location,
-        limit: 1
-      }).send();
+      // let response =await geocodingClient.forwardGeocode({
+      //   query: req.body.listing.location,
+      //   limit: 1
+      // }).send();
       
      
         
