@@ -74,7 +74,7 @@ router.post("/" ,upload.single("listing[image]"),async (req,res,next)=>{
       }).send();
       
      
-        consol.log(response)
+        console.log(response)
          
           let url = req.file.path;
           let filename = req.file.filename;
