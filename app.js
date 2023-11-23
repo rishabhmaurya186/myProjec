@@ -113,15 +113,15 @@ app.use("/",userRouter);
 
 
 
-// app.get("/",(req,res)=>{
-//   res.redirect("/listings")
-// })
+app.get("/",(req,res)=>{
+  res.redirect("/listings")
+})
 
-// app.all("*",(req,res,next)=>{
-//     console.log("error")
+app.all("*",(req,res,next)=>{
+    console.log("error")
     
-//     next(new ExpressError(404,"Page not Found!"))
-// })
+    next(new ExpressError(404,"Page not Found!"))
+})
 
 app.use("/",(err,req,res,next)=>{
     let {statusCode=505 , message="something went wrong!"} = err
