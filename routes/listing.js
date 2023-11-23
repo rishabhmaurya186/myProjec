@@ -67,14 +67,14 @@ router.get("/:id",async (req,res)=>{
 
 router.post("/" ,upload.single("listing[image]"),async (req,res,next)=>{
   
-    // try{
-      // let response =await geocodingClient.forwardGeocode({
-      //   query: req.body.listing.location,
-      //   limit: 1
-      // }).send();
+    try{
+      let response =await geocodingClient.forwardGeocode({
+        query: req.body.listing.location,
+        limit: 1
+      }).send();
       
      
-        
+        consol.log(response)
          
           let url = req.file.path;
           let filename = req.file.filename;
@@ -90,9 +90,9 @@ router.post("/" ,upload.single("listing[image]"),async (req,res,next)=>{
           req.flash("success", "New Listing Created!");
           return res.redirect("/listings")
   
-    // }catch(err){
-    //   next(err);
-    // }
+    }catch(err){
+      next(err);
+    }
       
   })
 
