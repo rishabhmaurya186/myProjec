@@ -103,3 +103,15 @@ body{
     height: 400px;
     width: 55vw;
 }
+@media only screen and (max-width: 600px){
+    #map { 
+        height: 400px;
+        width: 90vw;
+        margin-left: 2vw;
+    }
+}
+
+.show{
+    background-color: #fff;
+    width: 100vw;
+}
