@@ -85,7 +85,7 @@ router.post("/" ,upload.single("listing[image]"),async (req,res,next)=>{
           const newListing = new Listing(a)
           newListing.owner = req.user._id;
           newListing.image = {url, filename};
-         // newListing.geometry = response.body.features[0].geometry
+          newListing.geometry = response.body.features[0].geometry
           let savedListing=await newListing.save()
           
           req.flash("success", "New Listing Created!");
