@@ -26,8 +26,8 @@
         
       </div>
       <div class="nav-link ms-auto">
-        <form class="d-flex" role="search">
-          <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" role="search" method="post" action="/listings/search">
+          <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="listing[title]">
           <button class="btn sebtn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i> Search</button>
         </form>
       </div>
