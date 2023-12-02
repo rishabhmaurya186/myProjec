@@ -37,6 +37,20 @@ router.get("/",async (req,res)=>{
   }
 })
 
+// search
+
+router.post("/search", async (req,res)=>{
+ try{
+  const database = req.body.listing.title
+  const allListing = await Listing.find(  {$or: [{title : {$regex : database,$options: "i"}},
+    {location : {$regex : database,$options: "i"}}]})
+  res.render("listings/index.ejs",{allListing})
+
+   
+}catch(err){
+    next(err);
+  }
+})
 // New Route
 
 router.get("/new" ,isLoggedIn,(req,res)=>{
